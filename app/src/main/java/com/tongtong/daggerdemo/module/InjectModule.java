@@ -1,6 +1,7 @@
 package com.tongtong.daggerdemo.module;
 
 import com.tongtong.daggerdemo.entity.Cloth;
+import com.tongtong.daggerdemo.entity.Clothes;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,4 +21,16 @@ public class InjectModule {
         cloth.setColor("蓝色");
         return cloth;
     }
+
+    /**
+     * 带有参数的方法会自动获取参数对象
+     *
+     * @param cloth
+     * @return
+     */
+    @Provides
+    public Clothes getClothes(Cloth cloth) {
+        return new Clothes(cloth);
+    }
+
 }

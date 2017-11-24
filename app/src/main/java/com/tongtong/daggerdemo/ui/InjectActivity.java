@@ -10,6 +10,7 @@ import com.tongtong.daggerdemo.R;
 import com.tongtong.daggerdemo.component.DaggerInjectComponent;
 import com.tongtong.daggerdemo.component.InjectComponent;
 import com.tongtong.daggerdemo.entity.Cloth;
+import com.tongtong.daggerdemo.entity.Clothes;
 import com.tongtong.daggerdemo.entity.Shoe;
 import com.tongtong.daggerdemo.module.InjectModule;
 
@@ -33,6 +34,8 @@ public class InjectActivity extends AppCompatActivity {
     Cloth cloth;
     @Inject
     Shoe shoe;
+    @Inject
+    Clothes clothes;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +48,6 @@ public class InjectActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_create_obj)
     public void onViewClicked() {
-        tvResult.setText(cloth + "和" + shoe);
+        tvResult.setText(cloth + "和" + shoe + "和" + clothes);
     }
 }
