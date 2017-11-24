@@ -15,6 +15,7 @@ import com.tongtong.daggerdemo.entity.Shoe;
 import com.tongtong.daggerdemo.module.InjectModule;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,11 +32,15 @@ public class InjectActivity extends AppCompatActivity {
     TextView tvResult;
 
     @Inject
-    Cloth cloth;
+    @Named("blue")
+    Cloth blueCloth;
+    @Inject
+    @Named("red")
+    Cloth redCloth;
     @Inject
     Shoe shoe;
-    @Inject
-    Clothes clothes;
+//    @Inject
+//    Clothes clothes;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +53,6 @@ public class InjectActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_create_obj)
     public void onViewClicked() {
-        tvResult.setText(cloth + "和" + shoe + "和" + clothes);
+        tvResult.setText(blueCloth + "和" + redCloth);
     }
 }
