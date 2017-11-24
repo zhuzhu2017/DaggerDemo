@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DaggerDemo</string>
+    <string name="create_obj">生成对象</string>
 </resources>
