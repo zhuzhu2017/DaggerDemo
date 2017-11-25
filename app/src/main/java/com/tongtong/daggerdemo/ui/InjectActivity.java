@@ -10,8 +10,8 @@ import com.tongtong.daggerdemo.R;
 import com.tongtong.daggerdemo.component.DaggerInjectComponent;
 import com.tongtong.daggerdemo.component.InjectComponent;
 import com.tongtong.daggerdemo.entity.Cloth;
-import com.tongtong.daggerdemo.entity.Clothes;
 import com.tongtong.daggerdemo.entity.Shoe;
+import com.tongtong.daggerdemo.inject.RedCloth;
 import com.tongtong.daggerdemo.module.InjectModule;
 
 import javax.inject.Inject;
@@ -35,7 +35,7 @@ public class InjectActivity extends AppCompatActivity {
     @Named("blue")
     Cloth blueCloth;
     @Inject
-    @Named("red")
+    @RedCloth
     Cloth redCloth;
     @Inject
     Shoe shoe;

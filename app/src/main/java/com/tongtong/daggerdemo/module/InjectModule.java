@@ -2,6 +2,7 @@ package com.tongtong.daggerdemo.module;
 
 import com.tongtong.daggerdemo.entity.Cloth;
 import com.tongtong.daggerdemo.entity.Clothes;
+import com.tongtong.daggerdemo.inject.RedCloth;
 
 import javax.inject.Named;
 
@@ -34,7 +35,7 @@ public class InjectModule {
     }
 
     @Provides
-    @Named("red")
+    @RedCloth
     public Cloth getRedCloth() {
         Cloth cloth = new Cloth();
         cloth.setColor("红色");
