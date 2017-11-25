@@ -8,6 +8,10 @@ import javax.inject.Inject;
  */
 
 public class Shoe {
+    /**
+     * 这种方法仅使用于自己项目中创建的引用对象，
+     * 第三方jar包中的对象类是不能够使用这种方法的
+     */
     @Inject
     public Shoe() {
     }

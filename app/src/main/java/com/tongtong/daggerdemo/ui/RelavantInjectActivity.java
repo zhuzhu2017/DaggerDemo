@@ -9,8 +9,7 @@ import android.widget.TextView;
 import com.tongtong.daggerdemo.R;
 import com.tongtong.daggerdemo.component.DaggerInjectComponent;
 import com.tongtong.daggerdemo.component.InjectComponent;
-import com.tongtong.daggerdemo.entity.Cloth;
-import com.tongtong.daggerdemo.entity.Shoe;
+import com.tongtong.daggerdemo.entity.Clothes;
 import com.tongtong.daggerdemo.module.InjectModule;
 
 import javax.inject.Inject;
@@ -20,39 +19,32 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Dagger2的基础使用方法
- * ①创建引用对象（产品）
- * ②创建引用对象的获取对象（生产线）
- * ③创建接口实现Activity获取引用对象（供应商）
- * Created by allen on 2017/11/24.
+ * 具有引用关系的引用类实现依赖注入
+ * Created by allen on 2017/11/25.
  */
 
-public class SimpleInjectActivity extends AppCompatActivity {
+public class RelavantInjectActivity extends AppCompatActivity {
     @BindView(R.id.btn_create_obj)
     Button btnCreateObj;
     @BindView(R.id.tv_result)
     TextView tvResult;
 
     @Inject
-    Cloth cloth;
-    @Inject
-    Shoe shoe;
+    Clothes clothes;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inject);
+        setContentView(R.layout.activity_relavant);
         ButterKnife.bind(this);
-        //获取供应商接口
         InjectComponent injectComponent = DaggerInjectComponent.builder()
                 .injectModule(new InjectModule())
                 .build();
-        //绑定Activity
         injectComponent.inject(this);
     }
 
     @OnClick(R.id.btn_create_obj)
     public void onViewClicked() {
-        tvResult.setText(cloth + "和" + shoe);
+        tvResult.setText(clothes.toString());
     }
 }

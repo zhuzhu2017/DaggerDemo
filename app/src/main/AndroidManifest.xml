@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SimpleInjectActivity" />
+        <activity android:name=".ui.RelavantInjectActivity" />
     </application>
 
 </manifest>

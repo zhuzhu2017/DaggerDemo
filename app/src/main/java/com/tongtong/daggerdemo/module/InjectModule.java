@@ -1,6 +1,7 @@
 package com.tongtong.daggerdemo.module;
 
 import com.tongtong.daggerdemo.entity.Cloth;
+import com.tongtong.daggerdemo.entity.Clothes;
 
 import dagger.Module;
 import dagger.Provides;
@@ -21,13 +22,18 @@ import dagger.Provides;
  * 步骤3.2：若不存在参数，则直接初始化该类实例，一次依赖注入到此结束
  */
 @Module
-public class SimpleInjectModule {
+public class InjectModule {
 
     @Provides
     public Cloth getCloth() {
         Cloth cloth = new Cloth();
         cloth.setColor("红色");
         return cloth;
+    }
+
+    @Provides
+    public Clothes getClothes(Cloth cloth) {
+        return new Clothes(cloth);
     }
 
 }
