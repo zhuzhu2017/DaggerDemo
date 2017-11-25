@@ -1,6 +1,7 @@
 package com.tongtong.daggerdemo.component;
 
 import com.tongtong.daggerdemo.module.InjectModule;
+import com.tongtong.daggerdemo.ui.CustomInjectActivity;
 import com.tongtong.daggerdemo.ui.RelavantInjectActivity;
 import com.tongtong.daggerdemo.ui.SimpleInjectActivity;
 
@@ -15,4 +16,6 @@ public interface InjectComponent {
     void inject(SimpleInjectActivity simpleInjectActivity);
 
     void inject(RelavantInjectActivity relavantInjectActivity);
+
+    void inject(CustomInjectActivity customInjectActivity);
 }

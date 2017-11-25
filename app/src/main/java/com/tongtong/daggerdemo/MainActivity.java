@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.tongtong.daggerdemo.ui.CustomInjectActivity;
 import com.tongtong.daggerdemo.ui.RelavantInjectActivity;
 import com.tongtong.daggerdemo.ui.SimpleInjectActivity;
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnInject;
     @BindView(R.id.btn_inject_relavant)
     Button btnInjectRelavant;
+    @BindView(R.id.btn_inject_custom)
+    Button btnInjectCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_inject, R.id.btn_inject_relavant})
+    @OnClick({R.id.btn_inject, R.id.btn_inject_relavant, R.id.btn_inject_custom})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_inject_relavant:
                 intent = new Intent(this, RelavantInjectActivity.class);
+                break;
+            case R.id.btn_inject_custom:
+                intent = new Intent(this, CustomInjectActivity.class);
                 break;
         }
         if (intent != null) {

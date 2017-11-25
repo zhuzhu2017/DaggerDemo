@@ -2,6 +2,9 @@ package com.tongtong.daggerdemo.module;
 
 import com.tongtong.daggerdemo.entity.Cloth;
 import com.tongtong.daggerdemo.entity.Clothes;
+import com.tongtong.daggerdemo.inject.RedCloth;
+
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,12 +30,28 @@ public class InjectModule {
     @Provides
     public Cloth getCloth() {
         Cloth cloth = new Cloth();
+        cloth.setColor("紫色");
+        return cloth;
+    }
+
+    @Provides
+    @Named("blue")
+    public Cloth getBlueCloth() {
+        Cloth cloth = new Cloth();
+        cloth.setColor("蓝色");
+        return cloth;
+    }
+
+    @Provides
+    @RedCloth
+    public Cloth getRedCloth() {
+        Cloth cloth = new Cloth();
         cloth.setColor("红色");
         return cloth;
     }
 
     @Provides
-    public Clothes getClothes(Cloth cloth) {
+    public Clothes getClothes(@RedCloth Cloth cloth) {
         return new Clothes(cloth);
     }
 
