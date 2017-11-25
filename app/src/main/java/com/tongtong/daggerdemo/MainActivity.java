@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.tongtong.daggerdemo.ui.InjectActivity;
+import com.tongtong.daggerdemo.ui.SimpleInjectActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_inject)
     public void onViewClicked() {
-        Intent intent = new Intent(this, InjectActivity.class);
+        Intent intent = new Intent(this, SimpleInjectActivity.class);
         startActivity(intent);
     }
 }

@@ -1,16 +1,12 @@
 package com.tongtong.daggerdemo.module;
 
 import com.tongtong.daggerdemo.entity.Cloth;
-import com.tongtong.daggerdemo.entity.Clothes;
-import com.tongtong.daggerdemo.inject.RedCloth;
-
-import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
 
 /**
- * InjectActivity 的module类来提供Cloth对象，相当于生产线
+ * SimpleInjectActivity 的module类来提供Cloth对象，相当于生产线
  * Created by allen on 2017/11/24.
  * 说明：@Module表明该类是Module类,这样Dagger2才能识别,
  * 而@Provides的作用是声明Module类中哪些方法是用来提供依赖对象的,
@@ -25,32 +21,13 @@ import dagger.Provides;
  * 步骤3.2：若不存在参数，则直接初始化该类实例，一次依赖注入到此结束
  */
 @Module
-public class InjectModule {
-    @Provides
-    @Named("blue")
-    public Cloth getBlueCloth() {
-        Cloth cloth = new Cloth();
-        cloth.setColor("蓝色");
-        return cloth;
-    }
+public class SimpleInjectModule {
 
     @Provides
-    @RedCloth
-    public Cloth getRedCloth() {
+    public Cloth getCloth() {
         Cloth cloth = new Cloth();
         cloth.setColor("红色");
         return cloth;
     }
-
-    /**
-     * 带有参数的方法会自动获取参数对象
-     *
-     * @param cloth
-     * @return
-     */
-//    @Provides
-//    public Clothes getClothes(Cloth cloth) {
-//        return new Clothes(cloth);
-//    }
 
 }

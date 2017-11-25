@@ -10,6 +10,6 @@
         android:id="@+id/btn_inject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inject使用" />
+        android:text="Inject基础用法" />
 
 </LinearLayout>
